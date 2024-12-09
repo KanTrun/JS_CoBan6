@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // createElement()
+        // const div = document.createElement("div");
+
+        // div.innerHTML = "Quảng Cáo";
+
+        // document.querySelector("body").appendChild(div);
+    </script>
+
+    <script>
+        // createTextNode()
+        // const p = document.createElement("p");
+
+        // const text = document.createTextNode("Nội dung...");
+        // p.appendChild(text);
+
+        // document.querySelector("body").appendChild(p);
+
+    </script>
+
+    <!-- appendChild -->
+    <ul id="item">
+        <li>1 <input /> <button>X</button></li>
+        <li>2 <input /> <button>X</button></li>
+        <li>3 <input /> <button>X</button></li>
+    </ul>
+
+    <button id="button">Add Element</button>
+
+    <script>
+        // const click = document.querySelector("#button");
+        // const menu = document.querySelector("#item");
+        // let i = 2;
+        // click.addEventListener("click", () => {
+        //         const li = document.createElement("li");
+        //         li.innerHTML = `Item${i}`;
+        //         menu.appendChild(li);
+        //         i++;
+        // });
+    </script>
+
+    <script>
+        // insertBefore
+        // const click = document.querySelector("#button");
+        // const menu = document.querySelector("#item");
+        // let i = 100;
+        // click.addEventListener("click", () => {
+        //         const liFirst = menu.querySelector("li:nth-child(1)"); // vị trí phần tử
+        //         const li = document.createElement("li"); // thêm phẩn tử
+        //         li.innerHTML = `Item${i}`;
+        //         menu.insertBefore(li, liFirst); // thêm phần tử li trước liFirst
+        //         i--;
+        // });
+
+    </script>
+
+    <script>
+        // removeNode
+        // const menu = document.querySelector("#item"); // lấy các phần tử trong menu
+        // const delButton = menu.querySelectorAll("button"); // lấy ra tất cả các nút button trong menu
+        // for(const i of delButton) { // cho chạy qua các button
+        //     i.addEventListener("click", (event) => { //  tạo sự kiện khi nhấp chuột
+        //         console.log(event); 
+        //         menu.removeChild(event.target.parentNode); // sự kiện có đối tượng target bên trong nó có parent cha là li
+        //         console.log(event.target.parentNode);
+        //     })
+        // }
+
+    </script>
+
+    <script>
+        // replaceChild
+        const click = document.querySelector("#button");
+        const menu = document.querySelector("#item");
+        click.addEventListener("click", () => {
+                const liSecond = menu.querySelector("li:nth-child(2)"); // vị trí phần tử
+                const li = document.createElement("li"); // thêm phẩn tử
+                li.innerHTML = `4 <input value="Kan" /><button>X</button>`;
+                menu.replaceChild(li, liSecond); // thay thể thẻ li thứ 2 thành thẻ li khác
+        });
+        
+    </script>
+</body>
+</html>

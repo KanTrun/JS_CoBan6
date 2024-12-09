@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Sử dụng onload: dù đoạn script nằm trên nhưng vẫn hiểu được lấy từ đâu -->
+    <!-- <script>
+        // window.onload = () => {
+        //     const listTagA = document.querySelectorAll("#menu li a");
+        //     console.log(listTagA);
+        // }
+    </script> -->
+
+    <!-- Sử dụng onload  -->
+    <!-- <ul id="menu">
+        <li>
+            <a href="#">Mục 1</a>
+        </li>
+        <li>
+            <a href="#">Mục 2</a>
+        </li>
+        <li>
+            <a href="#">Mục 3</a>
+        </li>
+    </ul> -->
+    <!-- End onload  -->
+
+    
+    <input type="text" id="input" value="">
+    <script>
+    // Sử dụng onblur: tự động kích hoạt một sự kiện nào đó khi bấm ra khỏi trọng tâm
+        const input = document.querySelector("#input");
+        //Hàm tự bắt một sự kiện
+        // Có đối tượng event, và bên trong event có hàm target nối tới input
+        input.onblur = (event) => {
+            console.log(event.target.value);
+            // Gán lại giá trị trong input thành IN HOA
+            event.target.value = event.target.value.toUpperCase();
+            // Kích ra ngoài sẽ nền trở lại màu trắng
+            event.target.style.background = "white";
+        }
+
+    // Sử dụng onfocus: tự động kích hoạt khi nhấn vào trọng tâm một cái gì đó
+        input.onfocus = (event) => {
+            event.target.style.background = "pink";
+        }
+
+    // Sử dụng onkeydown: nhấn phím nào đấy trên bàn phím nó sẽ bắt sự kiện nào đấy
+        // input.onkeydown = (event) => {
+        //     // onkeydown nó sẽ hiển thị thông báo trước rồi nó mới bắt đầu vào input
+        //     alert(event.key);
+        //     console.log(event.key);
+        // }
+
+    // Sử dụng onkeyup: giống như onkeydown nhưng khác nhau là khi nhả phím ra nó sẽ kích hoạt
+        input.onkeyup = (event) => {
+            // Khi nhả bàn phím ra nó mới thực hiện (nhấn thì sẽ vào input và thả ra nó sẽ thực thi hàm bên trong)
+            alert(event.key);
+            //console.log(event.key);
+        }
+    </script>
+    
+
+</body>
+</html>
